@@ -1,0 +1,11 @@
+name "untitled"
+-- updated at %{now()}
+
+every 1 ticks do
+   input fe:: from power_source
+   output fe:: to machine
+end
+
+every 20 ticks do 
+    
+end

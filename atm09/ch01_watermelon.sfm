@@ -1,0 +1,44 @@
+name "西瓜"
+-- updated at %{now()}
+
+every 1 ticks do
+   input fe:: from power_source south side
+   output fe:: to ma,mb,mc top side
+   forget
+
+   input fe:: from g south side
+   output fe:: to power_cell top side
+end
+
+every 20 ticks do 
+    -- 西瓜 - 粉碎机
+    input item:: from ba bottom side
+    output item:: to ma  top side
+    forget
+
+    -- 粉碎机 - 加压
+    input item:: from ma bottom side
+    output item:: to mc  top side
+    forget
+
+    -- 水 - 电解，加压
+    input fluid:: from w bottom side
+    output fluid:: to mb, mc  top side
+    forget
+
+    -- 氢气 - 加压
+    input gas:: from mb bottom side
+    output gas:: to mc  top side
+    forget
+
+    -- 加压 - 发电机
+    input gas:: from mc bottom side
+    output gas:: to g  top side
+    forget
+
+    -- 加压 - 副产物
+    
+    input item:: from mc bottom side
+    output item:: to bz  top side
+    forget 
+end
