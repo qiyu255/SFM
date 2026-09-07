@@ -1,0 +1,7 @@
+name "筛子"
+-- updated at %{now()}
+
+every 20 ticks do 
+    input  item:: except exdeorum:* from buf
+    output item:: to box
+end
