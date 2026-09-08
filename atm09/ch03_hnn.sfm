@@ -1,0 +1,31 @@
+name "Hostile Neural Networks"
+-- updated at %{now()}
+--- n = 2
+every 120 ticks do
+    input fe:: from power
+    --- for i=1, n do 
+    output fe:: to "cut_%i"
+    output fe:: to "wok_%i"
+    --- end
+end
+
+every 160 ticks do 
+    input from raw
+    --- for i=1, n do 
+    output to "cut_%i"
+    --- end
+end
+
+
+every 520 ticks do 
+    --- for i=1, n do 
+    input  from "wok_%i"
+    --- end
+    output to cooked
+
+    --- for i=1, n do 
+    input from "cut_%i"
+    output hostilenetworks:prediction to "wok_%i"
+    output except hostilenetworks:prediction to cooked
+    --- end
+end

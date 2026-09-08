@@ -9,3 +9,9 @@ x %x
 
 y %{y+1}
 z %{z-1:.2f}
+
+
+--- n = 9
+--- for i=1, n do
+echo x_%i
+--- end

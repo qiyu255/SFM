@@ -1,3 +1,11 @@
+--[[
+为什么下面这个模板 %i没有插入变量i
+--- n = 9
+--- for i=1, n do
+echo x_%i
+--- end
+
+]]
 local sandbox = {
     rawequal = rawequal,
     xpcall = xpcall,
@@ -163,8 +171,10 @@ function m.translate(tl, env)
                 flush()
                 -- 读取完整的标识符（字母、数字、下划线）
                 local ident = tl:match("^[%a_][%w_%.]*", i + 1)
-                table.insert(parts, string.format('_id(%q)', ident))
+                -- table.insert(parts, string.format('_id(%q)', ident))
+                table.insert(parts, ident)
                 i = i + #ident + 1
+
             else
                 -- 4. % 后接其他字符，当作普通字符处理
                 buf = buf .. c
