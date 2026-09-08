@@ -1,7 +1,9 @@
 name "筛子"
 -- updated at %{now()}
 
-every 20 ticks do 
-    input  item:: except exdeorum:* from buf
+--- for i=1, 10 do
+every 20+%i ticks do
+    input  item:: except exdeorum:*,minecraft:blackstone from buf
     output item:: to box
 end
+--- end

@@ -1,0 +1,5 @@
+--- for i=1, 10 do
+every 20+%i ticks do
+   input from a output to b
+end
+--- end
