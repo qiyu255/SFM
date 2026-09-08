@@ -2,7 +2,7 @@ name "untitled"
 -- updated at %{now()}
 
 every 1 ticks do
-   input fe:: from power_source
+   input fe:: from power
    output fe:: to machine
 end
 

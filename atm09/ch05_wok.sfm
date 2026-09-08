@@ -1,0 +1,15 @@
+name "wok"
+-- updated at %{now()}
+
+every 20 ticks do 
+   input fe:: from power
+   output fe:: to wok top side
+end
+
+every 60 ticks do 
+   input from raw
+   output to wok top side
+   forget
+   input from wok bottom side
+   output to cooked 
+end

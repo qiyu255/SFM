@@ -1,0 +1,20 @@
+name "untitled"
+-- updated at %{now()}
+--- n = 2
+every 20 ticks do
+   input fe:: from power
+   --- for i=1, n do
+   output fe:: to wok_%i top side
+   --- end
+end
+
+--- for i=1, n do
+every 20 ticks do 
+   input from raw_%i east side
+   output to wok_%i top side
+end
+every 60 ticks do 
+   input from wok_%i east side
+   output to cooked top side
+end
+--- end
