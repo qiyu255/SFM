@@ -1,0 +1,7 @@
+name "炼药水"
+every 20 ticks do
+if wok slots 3 has = 0 then
+input from wok slots 0-2
+output to cooked
+end
+end

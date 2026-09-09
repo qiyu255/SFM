@@ -1,0 +1,6 @@
+name "mob"
+
+every 20 ticks do 
+   input mekanismtools: from box
+   output to del
+end
