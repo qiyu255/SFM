@@ -3,4 +3,8 @@ name "mob"
 every 20 ticks do 
    input mekanismtools: from box
    output to del
+   input with #c:enchantables from box
+   output to rec
+   forget
+   input from rec output to box
 end
