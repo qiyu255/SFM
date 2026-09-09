@@ -6,7 +6,7 @@ every 20 ticks do
    output fe:: to wok top side
 end
 
-every 60 ticks do 
+every 20 ticks do 
    input from raw
    output to wok top side
    forget

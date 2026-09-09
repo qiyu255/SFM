@@ -1,0 +1,74 @@
+name "裂变"
+-- updated at %{now()}
+
+every 20 ticks do 
+   input fe:: from power
+   output fe:: to "同离",
+   "UF6",
+   "UO" ,
+   "富集",
+   "化溶", 
+   "H2SO4",
+   "SO3",
+   "SO2",
+   "蒸发",
+   "电解" north side
+
+end
+
+every 60 ticks do 
+   input gas:: from "同离" south side
+   output gas:: to "燃料" top side
+   forget
+
+   input gas:: from "UF6" south side -- 化灌
+   output gas:: to "同离" west side
+   forget
+   
+   input gas:: from "UO" east side
+   output gas:: to "UF6" east side -- 化灌
+   forget
+
+   input from "富集" east side
+   output to "UO" top side
+   forget
+
+   input from box slots 1 -- 铀锭
+   output to "富集" top side
+   forget
+
+   input from box slots 2 -- 氟石
+   output to "化溶" top side
+   forget
+
+   input gas:: from "化溶" east side
+   output gas:: to "UF6" west side -- 化灌
+   forget
+
+   input gas:: from "H2SO4" south side -- 化灌
+   output gas:: to "化溶" west side
+   forget
+
+   input gas:: from "SO3" south side -- 化灌
+   output gas:: to "H2SO4" west side -- 化灌
+   forget
+
+   input gas:: from "SO2" east side 
+   output gas:: to "SO3" west side -- 化灌
+   forget
+   
+   input from box slots 3 -- 硫
+   output to "SO2" top side
+   forget
+
+   input gas:: from "蒸发" west side
+   output gas:: to "H2SO4" east side  -- 化灌
+   forget
+   
+   input gas:: from "电解" east side
+   output gas:: to "SO3" east side  -- 化灌
+   forget
+   
+   input fluid:: from "水"
+   output fluid:: to "电解","蒸发" top side
+end
