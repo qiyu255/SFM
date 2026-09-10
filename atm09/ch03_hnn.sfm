@@ -1,6 +1,6 @@
 name "Hostile Neural Networks"
 -- updated at %{now()}
---- n = 3
+--- n = 14
 every 120 ticks do
     input fe:: from power
     --- for i=1, n do 
@@ -9,10 +9,10 @@ every 120 ticks do
     --- end
 end
 
-every 160 ticks do 
+every 80 ticks do 
     input from raw
     --- for i=1, n do 
-    output to "cut_%i"
+    output 8 to "cut_%i"
     --- end
 end
 
