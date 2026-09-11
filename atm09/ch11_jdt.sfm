@@ -1,0 +1,15 @@
+name "jdt"
+-- updated at %{now()}
+
+every 20 ticks do 
+   input fe:: from power
+   output fe:: to "放置"
+   output fe:: to "破环"
+   output fe:: to "点击"
+end
+
+ 
+every 1280 ticks do 
+   input from raw
+   output to "点击"
+end
