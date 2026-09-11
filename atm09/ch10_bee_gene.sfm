@@ -1,0 +1,40 @@
+name "蜜蜂基因工程"
+-- updated at %{now()}
+
+every 20 ticks do 
+   input fe:: from power
+   output fe:: to "繁殖"
+   output fe:: to "孵化"
+   output fe:: to "离心"
+end
+
+every 20 ticks do 
+   input from box slots 1 -- 花
+   output to "繁殖"
+   forget
+
+   input from box slots 0 -- 小食
+   output to "孵化"
+   forget
+
+   input from "繁殖"
+   output to "孵化"
+   forget
+
+   input from "孵化" 
+   output to "发射器"
+   forget
+
+   input without #itemfilters:check_nbt from "发射器" 
+   output to "繁殖"
+   forget
+
+   input from "离心" 
+   output productivebees:gene to "检索"
+   output except productivebees:gene to "其他"
+   forget
+   
+   input from "检索" 
+   output to "缓存"
+   forget
+end
