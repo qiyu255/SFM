@@ -28,6 +28,6 @@ every 20 ticks do
    -- 收集
    input fluid:: from "离心","热离"
    output fluid:: to "盆"
-   input item:: from "离心","热离","盆"
+   input item:: from "离心","热离","盆" east side
    output item:: to cooked 
 end

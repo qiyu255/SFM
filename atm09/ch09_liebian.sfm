@@ -1,7 +1,7 @@
 name "裂变"
 -- updated at %{now()}
 
-every 20 ticks do 
+every 4 ticks do 
    input fe:: from power
    output fe:: to "同离",
    "UF6",
@@ -12,14 +12,10 @@ every 20 ticks do
    "SO3",
    "SO2",
    "蒸发",
-   "电解",
-   "粉碎",
-   "Puz",
-   "Poz",
-   "Pu" north side
+   "电解" north side
 end
 
-every 160 ticks do 
+every 80 ticks do 
    input gas:: from "同离" south side
    output gas:: to "燃料" top side
    forget
@@ -74,35 +70,4 @@ every 160 ticks do
    
    input fluid:: from "水"
    output fluid:: to "电解","蒸发" top side
-end
-
-every 520 ticks do 
-   if "核废料" has > 16000 gas:: then
-      input gas:: from "核废料" top side
-      output 8000 gas:: to Po east side
-      output 8000 gas:: to Pu east side
-      forget
-   end
-
-   input from box slots 2 -- 氟石
-   output to "粉碎" top side
-   forget
-
-   input fluid:: from "水"
-   output fluid:: to Poz,Puz west side
-   input from "粉碎" east side
-   output to Poz,Puz west side
-   forget
-   
-   input gas:: from Po south side
-   output gas:: to Poz top side
-   forget
-   input gas:: from Pu south side
-   output gas:: to Puz top side
-   forget
-
-   input item:: from Poz,Puz east side
-   output item:: to save
-   input gas:: from Poz,Puz east side
-   output gas:: to "废料桶" top side
 end

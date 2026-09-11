@@ -9,12 +9,16 @@ every 20 ticks do
 end
 
 every 20 ticks do 
-   input from box slots 1 -- 花
+   input from box slots 2 -- 花
    output to "繁殖"
    forget
 
-   input from box slots 0 -- 小食
+   input from box slots 1 -- 小食
    output to "孵化"
+   forget
+
+   input from box slots 0 -- 瓶
+   output to "装瓶机"
    forget
 
    input from "繁殖"
