@@ -13,21 +13,19 @@ every 20 ticks do
    output to "蜂箱"
    forget
 
+   
+   input from "蜂箱"
    -- 蜜皮 
-   input from "蜂箱"
    output productivebees:configurable_honeycomb to "离心"
-   output except productivebees:configurable_honeycomb to cooked
-   forget
-
    -- 块 
-   input from "蜂箱"
    output productivebees:configurable_comb to "热离"
-   output except productivebees:configurable_comb to cooked
+   output except productivebees:configurable_honeycomb,
+      productivebees:configurable_comb  to cooked
    forget
 
    -- 收集
    input fluid:: from "离心","热离"
-   output fluid:: to "盆"
+   output fluid:: to "盆","储罐"
    input item:: from "离心","热离","盆" east side
    output item:: to cooked 
 end

@@ -9,13 +9,17 @@ every 20 ticks do
 end
 
 every 20 ticks do 
-   input from box slots 2 -- 花
-   output to "繁殖"
-   forget
+   if box slots 2 has > 63 then
+      input from box slots 2 -- 花
+      output to "繁殖"
+      forget
+   end
 
-   input from box slots 1 -- 小食
-   output to "孵化"
-   forget
+   if box slots 1 has > 63 then
+      input from box slots 1 -- 小食
+      output to "孵化"
+      forget
+   end
 
    input from box slots 0 -- 瓶
    output to "装瓶机"
