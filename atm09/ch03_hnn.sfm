@@ -9,15 +9,15 @@ every 120 ticks do
     --- end
 end
 
-every 80 ticks do 
+every 40 ticks do 
     input from raw
     --- for i=1, n do 
-    output 8 to "cut_%i"
+    output 4 to "cut_%i"
     --- end
 end
 
 
-every 520 ticks do 
+every 320 ticks do 
     --- for i=1, n do 
     input  from "wok_%i"
     --- end

@@ -5,6 +5,7 @@ every 20 ticks do
    input fe:: from power
    output fe:: to "离心"
    output fe:: to "热离"
+   output fe:: to "马达"
 end
 
 every 20 ticks do 
@@ -24,8 +25,10 @@ every 20 ticks do
    forget
 
    -- 收集
-   input fluid:: from "离心","热离"
-   output fluid:: to "盆","储罐"
+   input fluid:productivebees:honey from "离心","热离"
+   output fluid:productivebees:honey to "盆","储罐"
    input item:: from "离心","热离","盆" east side
    output item:: to cooked 
+   input fluid:: from "离心","热离" east side
+   output fluid:: to cooked 
 end
